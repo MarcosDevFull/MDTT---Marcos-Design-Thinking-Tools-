@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Marcos Design Tools: uma jornada visual pelas ferramentas de UX e UI Design Thinking." />
+    <title>Marcos Design Tools — Jornada de UX/UI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#inicio" aria-label="Marcos Design Tools, início">
+          <span class="brand-mark">PT</span>
+          <span class="brand-copy"><strong>Marcos Design Tools</strong><small>Design Thinking, mapeado</small></span>
+        </a>
+        <nav class="main-nav" aria-label="Navegação principal">
+          <a href="#jornada">Empatia</a><a href="#jornada">Definição</a><a href="#jornada">Ideação</a><a href="#jornada">Prototipagem</a><a href="#jornada">Validação</a><a href="#jornada">Documentação</a>
+        </nav>
+        <span class="version">V1 · 2026</span>
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"><i data-lucide="menu"></i></button>
+      </header>
+
+      <main id="inicio">
+        <section class="hero container">
+          <div class="hero-copy">
+            <p class="eyebrow">UX / UI · DESIGN THINKING</p>
+            <h1>A jornada completa,<br /><em>fase a fase.</em></h1>
+            <p class="hero-intro">Da kickoff à validação: cada etapa vira uma mini-história que explica a ferramenta, como ela é usada e por que ela importa.</p>
+          </div>
+          <div class="hero-stats" aria-label="Resumo da jornada">
+            <div><strong>06</strong><span>FASES</span></div><div><strong>60</strong><span>MÉTODOS</span></div><div><strong>01</strong><span>JORNADA</span></div>
+          </div>
+        </section>
+
+        <section class="journey container" id="jornada">
+          <div class="journey-heading">
+            <div><p class="eyebrow">UM MAPA PARA CADA MOMENTO</p><h2>Escolha como quer<br /><span>percorrer o processo.</span></h2></div>
+            <div class="view-switcher" role="tablist" aria-label="Modo de navegação"><button class="view-button is-active" data-view="story" role="tab" aria-selected="true"><i data-lucide="route"></i> Jornada</button><button class="view-button" data-view="tabs" role="tab" aria-selected="false"><i data-lucide="layout-list"></i> Abas</button></div>
+          </div>
+          <div class="phase-tabs" role="tablist" aria-label="Fases do processo"></div>
+          <div class="phase-content" aria-live="polite"></div>
+        </section>
+      </main>
+      <footer class="footer container"><span>Marcos Design Tools <b>·</b> um mapa vivo para quem projeta experiências.</span><span>Feito para descobrir, decidir e desenhar.</span></footer>
+    </div>
+    <dialog class="method-modal" aria-labelledby="modal-title">
+      <button class="modal-close" aria-label="Fechar explicação"><i data-lucide="x"></i></button>
+      <div class="modal-kicker">MÉTODO · COMO APLICAR</div>
+      <h2 id="modal-title"></h2>
+      <p class="modal-summary"></p>
+      <div class="modal-section"><span>COMO FAZER</span><p class="modal-how"></p></div>
+      <div class="modal-section"><span>O QUE VOCÊ PRODUZ</span><p class="modal-output"></p></div>
+    </dialog>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

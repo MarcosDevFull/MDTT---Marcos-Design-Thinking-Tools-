@@ -13,13 +13,19 @@
   <body>
     <div class="page-shell">
       <header class="topbar">
-        <a class="brand" href="#inicio" aria-label="Marcos Design Tools, início">
-          <span class="brand-mark">PT</span>
-          <span class="brand-copy"><strong>Marcos Design Tools</strong><small>Design Thinking, mapeado</small></span>
+        <a class="brand" href="#inicio" aria-label="Marcos Design Thinking Tools, início">
+          <span class="brand-mark">MDTT</span>
+          <span class="brand-copy"><strong>Marcos Design Thinking Tools</strong><small>Design Thinking, mapeado</small></span>
         </a>
         <nav class="main-nav" aria-label="Navegação principal">
-          <a href="#jornada">Empatia</a><a href="#jornada">Definição</a><a href="#jornada">Ideação</a><a href="#jornada">Prototipagem</a><a href="#jornada">Validação</a><a href="#jornada">Documentação</a>
+          <a href="#jornada" data-phase="0">Empatia</a>
+          <a href="#jornada" data-phase="1">Definição</a>
+          <a href="#jornada" data-phase="2">Ideação</a>
+          <a href="#jornada" data-phase="3">Prototipagem</a>
+          <a href="#jornada" data-phase="4">Validação</a>
+          <a href="#jornada" data-phase="5">Documentação</a>
         </nav>
+        <a class="nav-tools" href="ferramentas.html">Ferramentas</a>
         <span class="version">V1 · 2026</span>
         <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"><i data-lucide="menu"></i></button>
       </header>
@@ -45,7 +51,7 @@
           <div class="phase-content" aria-live="polite"></div>
         </section>
       </main>
-      <footer class="footer container"><span>Marcos Design Tools <b>·</b> um mapa vivo para quem projeta experiências.</span><span>Feito para descobrir, decidir e desenhar.</span></footer>
+      <footer class="footer container"><span>Marcos Design Thinking Tools <b>·</b> um mapa vivo para quem projeta experiências.</span><span>Feito para descobrir, decidir e desenhar.</span></footer>
     </div>
     <dialog class="method-modal" aria-labelledby="modal-title">
       <button class="modal-close" aria-label="Fechar explicação"><i data-lucide="x"></i></button>
@@ -54,6 +60,46 @@
       <p class="modal-summary"></p>
       <div class="modal-section"><span>COMO FAZER</span><p class="modal-how"></p></div>
       <div class="modal-section"><span>O QUE VOCÊ PRODUZ</span><p class="modal-output"></p></div>
+    </dialog>
+    <dialog class="briefing-modal" aria-labelledby="briefing-title">
+      <button class="modal-close briefing-close" aria-label="Fechar explicação do Briefing Canvas"><i data-lucide="x"></i></button>
+      <div class="modal-kicker">WORKSHOP · ALINHAMENTO</div>
+      <h2 id="briefing-title">Briefing Canvas</h2>
+      <p class="modal-summary">Um canvas para transformar um pedido inicial em um desafio claro, compartilhado e pronto para investigação.</p>
+      <div class="briefing-intro">Reúna o time no início do projeto e responda às perguntas com fatos, hipóteses e pontos que ainda precisam ser descobertos.</div>
+      <div class="briefing-questions">
+        <div><span>01</span><strong>Qual é o contexto?</strong><p>O que está acontecendo e por que este projeto existe agora?</p><small><b>Capte:</b> origem do pedido, cenário atual, gatilho da mudança e histórico relevante.</small></div>
+        <div><span>02</span><strong>Qual é o desafio?</strong><p>Que problema ou oportunidade precisa ser enfrentado?</p><small><b>Capte:</b> problema formulado sem propor solução, impacto gerado e oportunidade percebida.</small></div>
+        <div><span>03</span><strong>Para quem estamos projetando?</strong><p>Quem vive essa situação e quais pessoas são impactadas?</p><small><b>Capte:</b> perfis envolvidos, necessidades, comportamentos e quem decide ou influencia.</small></div>
+        <div><span>04</span><strong>O que já sabemos?</strong><p>Quais evidências, dados e aprendizados já estão disponíveis?</p><small><b>Capte:</b> pesquisas existentes, métricas, fatos confirmados, aprendizados e fontes.</small></div>
+        <div><span>05</span><strong>O que ainda precisamos descobrir?</strong><p>Quais dúvidas e suposições devem orientar a pesquisa?</p><small><b>Capte:</b> perguntas em aberto, hipóteses, riscos de interpretação e informações ausentes.</small></div>
+        <div><span>06</span><strong>Quais são as restrições?</strong><p>Que limites de prazo, tecnologia, negócio ou operação existem?</p><small><b>Capte:</b> prazo, orçamento, dependências, regras, limitações técnicas e decisões inegociáveis.</small></div>
+        <div><span>07</span><strong>Como saberemos que deu certo?</strong><p>Quais resultados ou sinais indicam que avançamos?</p><small><b>Capte:</b> objetivo, métricas, comportamento esperado, critérios de sucesso e impacto desejado.</small></div>
+        <div><span>08</span><strong>Qual é o próximo passo?</strong><p>Que decisão ou ação o time precisa tomar depois do workshop?</p><small><b>Capte:</b> primeira ação, responsável, prazo, método de pesquisa e decisão que precisa ser destravada.</small></div>
+      </div>
+    </dialog>
+    <dialog class="sensemaking-modal" aria-labelledby="sensemaking-title">
+      <button class="modal-close sensemaking-close" aria-label="Fechar explicação sobre síntese"><i data-lucide="x"></i></button>
+      <div class="modal-kicker">DEFINIÇÃO · CONSTRUÇÃO DE SENTIDO</div>
+      <h2 id="sensemaking-title">Sintetizar é construir e compartilhar sentido</h2>
+      <p class="modal-summary">Na fase de Definição, o time transforma muitos sinais de pesquisa em uma leitura comum do problema. Para isso, duas habilidades caminham juntas: sensemaking e sensegiving.</p>
+      <div class="sensemaking-grid">
+        <article>
+          <span class="sensemaking-label">01 · SENSEMAKING</span>
+          <h3>Construir sentido</h3>
+          <p>É organizar dados, falas, comportamentos e evidências para perceber padrões, tensões e oportunidades que não estavam visíveis isoladamente.</p>
+          <strong>O product designer capta:</strong>
+          <ul><li>padrões recorrentes;</li><li>necessidades e dores;</li><li>contradições e hipóteses;</li><li>evidências que sustentam o problema.</li></ul>
+        </article>
+        <article>
+          <span class="sensemaking-label">02 · SENSEGIVING</span>
+          <h3>Compartilhar sentido</h3>
+          <p>É tornar essa leitura compreensível para o time e para as partes interessadas, criando alinhamento sobre o que importa e por que uma decisão deve ser tomada.</p>
+          <strong>O product designer capta:</strong>
+          <ul><li>uma narrativa clara;</li><li>conexões entre evidência e decisão;</li><li>linguagem comum para o problema;</li><li>próximas perguntas para a ideação.</li></ul>
+        </article>
+      </div>
+      <div class="sensemaking-note"><strong>Em resumo:</strong> sensemaking ajuda a entender o que os dados significam; sensegiving ajuda o grupo a entender, discutir e agir a partir desse significado.</div>
     </dialog>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="script.js"></script>

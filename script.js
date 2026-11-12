@@ -38,7 +38,8 @@ const toolLinks = {
   'Sitemap Generator': 'https://www.sitemap-generator.com',
   Stormboard: 'https://stormboard.com',
   'PenPot': 'https://penpot.app',
-  'Google Analytics': 'https://analytics.google.com'
+  'Google Analytics': 'https://analytics.google.com',
+  'Microsoft Clarity': 'https://clarity.microsoft.com'
 };
 
 const phases = [
@@ -171,23 +172,70 @@ const toolCatalog = [
       { name: 'Maze', url: 'https://maze.co', summary: 'Teste de usabilidade remoto com tarefas e análise de comportamento.', use: 'Use para validar protótipos e coletar dados de uso em etapas finais de Prototipagem e Validação.', phase: 'Prototipagem / Validação' },
       { name: 'Hotjar', url: 'https://www.hotjar.com', summary: 'Heatmaps, gravações e feedback para entender comportamento do usuário.', use: 'Útil para confirmar atritos e padrões após a entrega de uma solução ou versão beta.', phase: 'Validação' },
       { name: 'Useberry', url: 'https://www.useberry.com', summary: 'Teste de usabilidade com métricas de fluxo, tarefas e feedback de usuário.', use: 'Ajuda a avaliar clareza, eficiência e dificuldade na experiência do produto.', phase: 'Validação' },
-      { name: 'Google Analytics', url: 'https://analytics.google.com', summary: 'Métricas de comportamento em produto digital e jornadas reais.', use: 'Útil para validar impacto e eficiência após o lançamento da solução.', phase: 'Validação / Documentação' }
+      { name: 'Google Analytics', url: 'https://analytics.google.com', summary: 'Métricas de comportamento em produto digital e jornadas reais.', use: 'Útil para validar impacto e eficiência após o lançamento da solução.', phase: 'Validação / Documentação' },
+      { name: 'Microsoft Clarity', url: 'https://clarity.microsoft.com', summary: 'Heatmaps e gravações de sessões para entender como as pessoas usam seu produto.', use: 'Use para encontrar cliques sem resultado, pontos de abandono e padrões de navegação sem custo.', phase: 'Validação' }
     ]
   }
 ];
+
+const methodologyCatalog = [
+  { category: 'Descoberta e direção', description: 'Abordagens para entender o problema, alinhar o time e escolher o que vale investigar.', color: '#ff6648', methods: [
+    { name: 'Design Thinking', tag: 'problemas complexos', icon: 'compass', summary: 'Processo centrado nas pessoas para explorar o contexto, definir o problema, criar possibilidades e testar soluções.', purpose: 'Ajuda o time a reduzir suposições antes de investir em uma resposta, conectando evidências do usuário a decisões de produto.' },
+    { name: 'Double Diamond', tag: 'divergir e convergir', icon: 'diamond', summary: 'Modelo visual com quatro movimentos: descobrir, definir, desenvolver e entregar.', purpose: 'Torna explícito quando o time deve ampliar a investigação e quando deve convergir para uma decisão compartilhada.' },
+    { name: 'Jobs To Be Done', tag: 'necessidades reais', icon: 'briefcase-business', summary: 'Investiga o progresso que uma pessoa tenta realizar em uma situação específica, em vez de olhar apenas para perfis.', purpose: 'Evita criar funcionalidades baseadas em personas genéricas e revela o contexto que faz alguém escolher, usar ou abandonar uma solução.' },
+    { name: 'Service Design', tag: 'experiência ponta a ponta', icon: 'network', summary: 'Projeta a experiência completa do serviço, incluindo pessoas, canais, bastidores, processos e dependências.', purpose: 'Ajuda a encontrar falhas fora da tela: uma interface pode ser boa, mas o serviço ainda falhar no atendimento, na operação ou na confiança.' }
+  ] },
+  { category: 'Validação e aprendizado', description: 'Métodos para transformar hipóteses em evidências antes de construir ou escalar.', color: '#9d7ce7', methods: [
+    { name: 'Lean UX', tag: 'hipóteses', icon: 'refresh-cw', summary: 'Ciclo colaborativo de declarar hipóteses, criar algo mínimo, observar o comportamento e aprender com os resultados.', purpose: 'Evita construir uma tela que o médico não confia em usar: o time valida valor, facilidade e viabilidade em ciclos curtos.' },
+    { name: 'Lean Startup', tag: 'aprender rápido', icon: 'rocket', summary: 'Abordagem de aprendizado validado baseada em construir, medir e aprender com o menor experimento possível.', purpose: 'Ajuda a testar se existe um problema e um mercado antes de transformar uma aposta em roadmap extenso.' },
+    { name: 'Design Sprint', tag: 'decisão em poucos dias', icon: 'timer', summary: 'Sprint estruturado que comprime entendimento, ideação, prototipagem e teste em uma sequência intensa.', purpose: 'Destrava decisões difíceis quando o time precisa aprender com usuários rapidamente e sair da discussão abstrata.' },
+    { name: 'PoC — Prova de conceito', tag: 'viabilidade técnica', icon: 'flask-conical', summary: 'Experimento técnico focado em provar se uma ideia pode funcionar com a tecnologia, dados e integrações disponíveis.', purpose: 'Evita prometer uma funcionalidade que o servidor não conseguiria processar, antes de gastar tempo com acabamento de interface.' },
+    { name: 'MVP — Produto mínimo viável', tag: 'primeira versão', icon: 'package-check', summary: 'Versão mínima de um produto que entrega valor real e permite aprender com uso, sem esperar a solução completa.', purpose: 'Ajuda a colocar uma hipótese em contato com o mundo mantendo o escopo pequeno, mensurável e evolutivo.' }
+  ] },
+  { category: 'Entrega e colaboração', description: 'Práticas para organizar o trabalho entre design, produto e engenharia e manter o aprendizado vivo.', color: '#35b9b4', methods: [
+    { name: 'Agile UX', tag: 'design contínuo', icon: 'workflow', summary: 'Integra pesquisa, design e validação ao desenvolvimento iterativo, em vez de concentrar todo o design antes do código.', purpose: 'Mantém a experiência próxima da implementação e permite ajustar decisões com o time de desenvolvimento durante a entrega.' },
+    { name: 'Scrum', tag: 'sprints e inspeção', icon: 'repeat-2', summary: 'Framework ágil com ciclos curtos, papéis, eventos e um backlog priorizado para entregar incrementos do produto.', purpose: 'Cria um ritmo de planejamento, execução e revisão para que produto, design e engenharia aprendam juntos.' },
+    { name: 'Kanban', tag: 'fluxo de trabalho', icon: 'columns-3', summary: 'Sistema visual para acompanhar o fluxo, limitar trabalho em andamento e melhorar continuamente a passagem de tarefas.', purpose: 'Dá visibilidade aos gargalos e reduz o excesso de tarefas abertas, algo especialmente útil em times de produto e suporte.' },
+    { name: 'Dual Track Agile', tag: 'descoberta + entrega', icon: 'split', summary: 'Mantém duas trilhas conectadas: descoberta para reduzir risco e entrega para construir, lançar e medir.', purpose: 'Evita que a equipe desenvolva itens sem evidência e evita que a pesquisa fique desconectada do que será entregue.' },
+    { name: 'DevOps e CI/CD', tag: 'entrega confiável', icon: 'git-merge', summary: 'Cultura e práticas que aproximam desenvolvimento e operação com automação, integração contínua e entregas frequentes.', purpose: 'Reduz o risco de lançamento e cria um caminho técnico para colocar melhorias em produção com segurança e feedback rápido.' }
+  ] }
+];
+
+function renderMethodologyCatalog() {
+  const target = document.getElementById('methodology-categories');
+  if (!target) return;
+  target.innerHTML = methodologyCatalog.map(category => `
+    <section class="methodology-category">
+      <div class="methodology-category-header"><span class="tool-category-kicker" style="color:${category.color}">${category.category}</span><p>${category.description}</p></div>
+      <div class="methodology-grid">
+        ${category.methods.map(method => `<article class="methodology-card" style="--method-color:${category.color}"><div class="methodology-card-head"><div><span class="methodology-tag">${method.tag}</span><h4>${method.name}</h4></div><span class="methodology-card-icon"><i data-lucide="${method.icon}"></i></span></div><p>${method.summary}</p><div class="methodology-purpose"><strong>Objetivo na prática</strong>${method.purpose}</div></article>`).join('')}
+      </div>
+    </section>
+  `).join('');
+  if (window.lucide) lucide.createIcons();
+}
+
+const freeToolNames = new Set([
+  'Google Forms', 'Material Design', 'Apple Human Interface Guidelines',
+  'Google Design', 'Google Analytics', 'Microsoft Clarity'
+]);
+
+function toolPricingLabel(tool) {
+  return freeToolNames.has(tool.name) ? '100% gratuita' : 'Freemium ou paga';
+}
 
 function renderToolsCatalog() {
   const target = document.getElementById('tools-categories');
   if (!target) return;
 
-  target.innerHTML = toolCatalog.map(category => `
-    <article class="tool-category">
-      <div class="tool-category-header">
-        <span class="tool-category-kicker">${category.category}</span>
-        <p>${category.description}</p>
-      </div>
+  const renderToolGroup = (title, tools, groupClass) => {
+    if (!tools.length) return '';
+    const toolCountLabel = tools.length === 1 ? 'ferramenta' : 'ferramentas';
+    return `
+    <section class="tool-group ${groupClass}">
+      <div class="tool-group-heading"><h3>${title}</h3><span>${tools.length} ${toolCountLabel}</span></div>
       <div class="tool-grid">
-        ${category.tools.map(tool => `
+        ${tools.map(tool => `
           <article class="tool-card-item">
             <div class="tool-card-top">
               <div>
@@ -196,6 +244,7 @@ function renderToolsCatalog() {
               </div>
               <a href="${tool.url}" target="_blank" rel="noreferrer" aria-label="Abrir ${tool.name}">Abrir</a>
             </div>
+            <span class="tool-pricing">${toolPricingLabel(tool)}</span>
             <p>${tool.summary}</p>
             <div class="tool-use">
               <strong>Quando usar</strong>
@@ -204,8 +253,24 @@ function renderToolsCatalog() {
           </article>
         `).join('')}
       </div>
+    </section>
+  `;
+  };
+
+  target.innerHTML = toolCatalog.map(category => {
+    const freeTools = category.tools.filter(tool => freeToolNames.has(tool.name));
+    const paidTools = category.tools.filter(tool => !freeToolNames.has(tool.name));
+    return `
+    <article class="tool-category">
+      <div class="tool-category-header">
+        <span class="tool-category-kicker">${category.category}</span>
+        <p>${category.description}</p>
+      </div>
+      ${renderToolGroup('100% gratuitas', freeTools, 'tool-group-free')}
+      ${renderToolGroup('Freemium ou pagas', paidTools, 'tool-group-paid')}
     </article>
-  `).join('');
+  `;
+  }).join('');
 }
 
 extraMethods.forEach((methods, phaseIndex) => {
@@ -240,6 +305,20 @@ phases.forEach((phase, phaseIndex) => {
   phase.methods.sort((a, b) => order.indexOf(a.name) - order.indexOf(b.name));
 });
 
+const artifactOrderStorageKey = 'mdtt-artifact-order';
+try {
+  const savedOrder = JSON.parse(localStorage.getItem(artifactOrderStorageKey) || '[]');
+  if (Array.isArray(savedOrder)) {
+    phases.forEach((phase, phaseIndex) => {
+      const order = savedOrder[phaseIndex];
+      if (!Array.isArray(order)) return;
+      phase.methods.sort((a, b) => order.indexOf(a.name) - order.indexOf(b.name));
+    });
+  }
+} catch (error) {
+  // A stored order is optional; the default order remains available if storage is blocked.
+}
+
 phases.forEach((phase) => {
   phase.methods.forEach((method) => {
     if (!method.supportTools) {
@@ -255,7 +334,7 @@ const modal = document.querySelector('.method-modal');
 const mainNav = document.querySelector('.main-nav');
 const menuToggle = document.querySelector('.menu-toggle');
 let activePhase = 0;
-let currentView = 'story';
+let currentView = 'tabs';
 
 function setActivePhase(index, options = {}) {
   const { scroll = true, keepView = true } = options;
@@ -279,7 +358,7 @@ function setActivePhase(index, options = {}) {
 function toolTemplate(tool, phase) {
   return `<a class="method-tool" href="${toolLinks[tool[1]]}" target="_blank" rel="noreferrer">${tool[0]} · ${tool[1]} <i data-lucide="arrow-up-right"></i></a>`;
 }
-function methodTemplate(method, phase) {
+function methodTemplate(method, phase, phaseIndex) {
   const methodIndex = phase.methods.indexOf(method) + 1;
   const supportTools = method.supportTools || method.tools.map(([label, tool]) => tool).slice(0, 4);
   const supportMarkup = supportTools.map((tool) => {
@@ -291,10 +370,11 @@ function methodTemplate(method, phase) {
     return `<span class="support-tool">${name}</span>`;
   }).join('');
 
-  return `<button class="method-card" style="--phase:${phase.color}" data-method="${method.name}"><span class="method-order">${String(methodIndex).padStart(2, '0')}</span><div class="method-card-head"><h4>${method.name}</h4><i data-lucide="${method.icon}"></i></div><p>${method.summary}</p><div class="method-supports"><span class="supports-label">Ferramentas de apoio</span><div class="support-tools">${supportMarkup}</div></div><div class="method-tools">${method.tools.map(tool => toolTemplate(tool, phase)).join('')}</div><div class="method-cta">Ver explicação do método · próximo passo →</div></button>`;
+  return `<button class="method-card" draggable="true" style="--phase:${phase.color}" data-method="${method.name}" data-phase-index="${phaseIndex}" aria-label="${method.name}. Arraste para reorganizar"><span class="method-order">${String(methodIndex).padStart(2, '0')}</span><div class="method-card-head"><h4>${method.name}</h4><i data-lucide="${method.icon}"></i></div><p>${method.summary}</p><div class="method-supports"><span class="supports-label">Ferramentas de apoio</span><div class="support-tools">${supportMarkup}</div></div><div class="method-tools">${method.tools.map(tool => toolTemplate(tool, phase)).join('')}</div><div class="method-cta">Ver explicação do método · próximo passo →</div></button>`;
 }
 function phaseTemplate(phase) {
-  return `<article class="phase-card" style="--phase:${phase.color}"><div class="phase-marker"><span class="phase-number">${phase.number}</span></div><div class="phase-content-card"><div class="phase-intro"><div class="phase-title-wrap"><h3>${phase.name}</h3><p class="sub">${phase.subtitle}</p></div><div class="phase-meta"><span class="meta-label">MÉTODOS NESTA FASE</span><strong>${String(phase.methods.length).padStart(2, '0')}</strong></div></div><div class="story"><span class="story-label">${phase.label}</span><p>${phase.story}</p></div><div class="method-grid">${phase.methods.map(method => methodTemplate(method, phase)).join('')}</div><div class="phase-footer"><span>Próximo movimento: ${phase.next}</span><span>${phase.number} / 06 · continuar →</span></div></div></article>`;
+  const phaseIndex = phases.indexOf(phase);
+  return `<article class="phase-card" style="--phase:${phase.color}"><div class="phase-marker"><span class="phase-number">${phase.number}</span></div><div class="phase-content-card"><div class="phase-intro"><div class="phase-title-wrap"><h3>${phase.name}</h3><p class="sub">${phase.subtitle}</p></div><div class="phase-meta"><span class="meta-label">MÉTODOS NESTA FASE</span><strong>${String(phase.methods.length).padStart(2, '0')}</strong></div></div><div class="story"><span class="story-label">${phase.label}</span><p>${phase.story}</p></div><div class="method-grid">${phase.methods.map(method => methodTemplate(method, phase, phaseIndex)).join('')}</div><div class="phase-footer"><span>Próximo movimento: ${phase.next}</span><span>${phase.number} / 06 · continuar →</span></div></div></article>`;
 }
 function renderTabs() {
   tabs.innerHTML = phases.map((phase, index) => `<button class="phase-tab ${index === activePhase ? 'is-active' : ''}" style="--phase:${phase.color}" data-phase="${index}" role="tab" aria-selected="${index === activePhase}"><span class="tab-num">${phase.number}</span>${phase.name}</button>`).join('');
@@ -303,11 +383,49 @@ function renderTabs() {
 function renderContent() {
   content.className = `phase-content ${currentView === 'tabs' ? 'tabs-mode' : ''}`;
   content.innerHTML = currentView === 'story' ? phases.map(phaseTemplate).join('') : phaseTemplate(phases[activePhase]);
+  let draggedCard = null;
+  let didDrag = false;
   content.querySelectorAll('.method-card').forEach(card => card.addEventListener('click', event => {
+    if (didDrag) {
+      didDrag = false;
+      return;
+    }
     if (event.target.closest('.method-tool')) return;
     const phase = currentView === 'story' ? phases.find(item => item.methods.some(method => method.name === card.dataset.method)) : phases[activePhase];
     openMethod(phase.methods.find(method => method.name === card.dataset.method), phase);
   }));
+  content.querySelectorAll('.method-card').forEach(card => {
+    card.addEventListener('dragstart', event => {
+      draggedCard = card;
+      didDrag = true;
+      card.classList.add('is-dragging');
+      event.dataTransfer.effectAllowed = 'move';
+      event.dataTransfer.setData('text/plain', card.dataset.method);
+    });
+    card.addEventListener('dragend', () => {
+      card.classList.remove('is-dragging');
+      content.querySelectorAll('.method-card').forEach(item => item.classList.remove('is-drop-target'));
+      draggedCard = null;
+    });
+    card.addEventListener('dragover', event => {
+      if (!draggedCard || draggedCard === card || draggedCard.dataset.phaseIndex !== card.dataset.phaseIndex) return;
+      event.preventDefault();
+      content.querySelectorAll('.method-card').forEach(item => item.classList.remove('is-drop-target'));
+      card.classList.add('is-drop-target');
+    });
+    card.addEventListener('drop', event => {
+      event.preventDefault();
+      if (!draggedCard || draggedCard === card || draggedCard.dataset.phaseIndex !== card.dataset.phaseIndex) return;
+      const phase = phases[Number(card.dataset.phaseIndex)];
+      const fromIndex = phase.methods.findIndex(method => method.name === draggedCard.dataset.method);
+      const toIndex = phase.methods.findIndex(method => method.name === card.dataset.method);
+      const [movedMethod] = phase.methods.splice(fromIndex, 1);
+      phase.methods.splice(toIndex, 0, movedMethod);
+      localStorage.setItem(artifactOrderStorageKey, JSON.stringify(phases.map(item => item.methods.map(method => method.name))));
+      renderContent();
+      if (window.lucide) lucide.createIcons();
+    });
+  });
 }
 function openBriefingCanvas() {
   const briefingModal = document.querySelector('.briefing-modal');
@@ -330,6 +448,9 @@ function openMethod(method, phase) {
 function render() {
   if (document.getElementById('tools-categories')) {
     renderToolsCatalog();
+  }
+  if (document.getElementById('methodology-categories')) {
+    renderMethodologyCatalog();
   }
 
   if (!tabs || !content || !journey) {
@@ -508,14 +629,6 @@ function createMarcFlag() {
   if (window.lucide) lucide.createIcons();
 }
 
-document.querySelectorAll('.view-button').forEach(button => button.addEventListener('click', () => {
-  currentView = button.dataset.view;
-  document.querySelectorAll('.view-button').forEach(item => { item.classList.toggle('is-active', item === button); item.setAttribute('aria-selected', item === button); });
-  journey.classList.toggle('journey-mode', currentView === 'story');
-  renderContent();
-  lucide.createIcons();
-}));
-
 document.querySelectorAll('.main-nav a').forEach(link => {
   link.addEventListener('click', event => {
     const href = link.getAttribute('href') || '';
@@ -565,9 +678,6 @@ if (modal) {
 }
 if (menuToggle && mainNav) {
   menuToggle.addEventListener('click', event => { const open = event.currentTarget.getAttribute('aria-expanded') === 'true'; event.currentTarget.setAttribute('aria-expanded', !open); mainNav.classList.toggle('is-open', !open); });
-}
-if (journey) {
-  journey.classList.add('journey-mode');
 }
 createMarcFlag();
 render();
